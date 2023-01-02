@@ -24,19 +24,25 @@ class JSEngine:
             self.logger = logger
         self.sess = requests.Session()
         self.context = js2py.EvalJs()
-        self.__preload_js(get_dir('stub.js'))
+        self.__preload_js()
 
     def __repr__(self):
         return 'JSEngine'
 
-    def __preload_js(self, file):
+    def __preload_js(self):
         """
-        Load any javascript code at the start of the JS context.
-        :param file: Javascript file with code.
+        Execute JS script
+        :param file:
         :return:
         """
-        with open(file, 'r') as f:
-            code = f.read()
+        code = '''const document = {
+                getElementById(key) {
+                    if (!this[key]) {
+                    this[key] = {}
+                    }
+                    return this[key];
+                }
+                }'''
         self.context.execute(code)
 
     @staticmethod

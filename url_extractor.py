@@ -1,6 +1,6 @@
 from engines.js import JSEngine
 
-def extract_download_links(original_urls):
+def extract_download_links(original_urls) -> str:
     engine = JSEngine()
     original_urls = original_urls.split("\n")
     zippybase = "https://www61.zippyshare.com"
