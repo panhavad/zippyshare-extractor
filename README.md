@@ -37,6 +37,10 @@ Try yourself guys 😒
 
 [video to be upload]
 
+## 🐚Compile to EXE
+
+```pyinstaller --noconfirm --onefile --windowed --icon "src/main.ico" --name "zde-v.0.1"  "main.py"```
+
 ## 🐚Last Message
 
 Hope it work for you, Good bye🫥

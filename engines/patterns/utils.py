@@ -1,8 +1,6 @@
 import re
 import urllib.parse
 from functools import reduce
-import json
-import requests
 
 VAR_REGEX = r'(var {} = )([0-9%]+);'
 
