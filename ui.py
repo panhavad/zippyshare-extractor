@@ -57,7 +57,7 @@ class Ui_MainWindow(object):
     
     def extract_button_pressed(self):
         inputed_text=self.plainTextEdit.toPlainText()
-        output_text=extractor(inputed_text)
+        output_text=extract_download_links(inputed_text)
         self.textEdit.setPlainText(output_text)
     
     def to_clip_board_pressed(self):
